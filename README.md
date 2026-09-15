@@ -1,5 +1,7 @@
 # editPDFbyAI
 
+**English** | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
+
 Edit PDFs with natural language. Describe a change, inspect a real PDF preview, then apply and export. Powered by your own DeepSeek API key.
 
 PDF processing runs on your computer. The interface opens in your browser; no cloud PDF server or subscription is required.

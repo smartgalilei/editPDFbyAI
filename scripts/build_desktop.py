@@ -4,6 +4,10 @@ import subprocess
 import sys
 import shutil
 import importlib.metadata
+import platform
+import ssl
+import urllib.request
+import certifi
 
 root = pathlib.Path(__file__).resolve().parents[1]
 subprocess.run([
@@ -15,7 +19,7 @@ subprocess.run([
 ], cwd=root, check=True)
 
 bundle = root / 'dist' / 'editPDFbyAI'
-for name in ['LICENSE', 'README.md', 'THIRD_PARTY_NOTICES.md']:
+for name in ['LICENSE', 'README.md', 'README.zh-CN.md', 'README.ja.md', 'THIRD_PARTY_NOTICES.md']:
     shutil.copy2(root / name, bundle / name)
 notices = bundle / 'THIRD_PARTY_LICENSES'
 for package in ['PyMuPDF', 'pypdf', 'fonttools', 'skia-pathops', 'certifi', 'pyinstaller']:
@@ -37,4 +41,11 @@ for name in ['LICENSE.txt', 'LICENSE']:
         shutil.copy2(source, notices / 'Python-LICENSE.txt')
         break
 else:
-    raise RuntimeError('Python runtime license not found')
+    # Framework installations on macOS do not always include a top-level LICENSE.
+    url = f'https://raw.githubusercontent.com/python/cpython/v{platform.python_version()}/LICENSE'
+    with urllib.request.urlopen(url, timeout=60,
+                                context=ssl.create_default_context(cafile=certifi.where())) as response:
+        license_text = response.read()
+    if b'PYTHON SOFTWARE FOUNDATION LICENSE' not in license_text:
+        raise RuntimeError('Invalid Python runtime license response')
+    (notices / 'Python-LICENSE.txt').write_bytes(license_text)
