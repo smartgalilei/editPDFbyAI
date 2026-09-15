@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+.env
+.DS_Store
+output/
+tmp/
+node_modules/
+.wrangler/
+.env.*
+*.log
+VERIFICATION.md
+build/
+dist/
+*.spec
+# Earlier cloud experiment: not part of the desktop release.
+cloud/
+cloud_app.py
+Dockerfile
+.dockerignore
+requirements-cloud.txt
+wrangler.jsonc
+package.json
+package-lock.json
+web/cloud-client.mjs
+tests/cloud/
+tests/test_cloud.py
+启动 PDFedit.command
+editPDFbyAI-*.tar.gz*
+editPDFbyAI-*.zip*

@@ -1,0 +1,38 @@
+name: Build desktop downloads
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            label: macOS-arm64
+          - os: macos-15-intel
+            label: macOS-x64
+          - os: windows-2022
+            label: Windows-x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements.txt pyinstaller==6.22.3
+      - run: python -m unittest discover -s tests -q
+      - run: python scripts/build_desktop.py
+      - run: python scripts/smoke_desktop.py
+      - run: python scripts/archive_desktop.py ${{ matrix.label }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: editPDFbyAI-${{ matrix.label }}
+          path: |
+            editPDFbyAI-${{ matrix.label }}.tar.gz*
+            editPDFbyAI-${{ matrix.label }}.zip*
+          if-no-files-found: error
