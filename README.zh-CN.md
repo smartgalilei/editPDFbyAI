@@ -87,7 +87,7 @@ python scripts/smoke_desktop.py
 
 ## 开源许可证
 
-Copyright (c) 2026 editPDFbyAI contributors。项目采用 **GNU AGPL 第 3 版**，见 [LICENSE](LICENSE)。对应源码可在本仓库及各 Release 的源码包中获取。第三方依赖保留各自许可证，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 和下载包内的许可证文件。
+Copyright (c) 2026 smartgalilei。项目采用 **GNU AGPL 第 3 版**，见 [LICENSE](LICENSE)。对应源码可在本仓库及各 Release 的源码包中获取。第三方依赖保留各自许可证，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 和下载包内的许可证文件。
 
 PyMuPDF/MuPDF 采用 AGPL 或单独商业授权；本项目使用 AGPL 发行版。不附带商业字体或真实用户 PDF。
 

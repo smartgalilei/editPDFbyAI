@@ -87,7 +87,7 @@ python scripts/smoke_desktop.py
 
 ## ライセンス
 
-Copyright (c) 2026 editPDFbyAI contributors。本プロジェクトは **GNU AGPL バージョン 3** で公開しています。[LICENSE](LICENSE) を参照してください。対応するソースは本リポジトリと各リリースのソースアーカイブで提供します。依存ライブラリーにはそれぞれのライセンスが適用されます。[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) とパッケージ内のライセンスファイルをご確認ください。
+Copyright (c) 2026 smartgalilei。本プロジェクトは **GNU AGPL バージョン 3** で公開しています。[LICENSE](LICENSE) を参照してください。対応するソースは本リポジトリと各リリースのソースアーカイブで提供します。依存ライブラリーにはそれぞれのライセンスが適用されます。[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) とパッケージ内のライセンスファイルをご確認ください。
 
 PyMuPDF/MuPDF は AGPL または別途の商用ライセンスで提供されます。本プロジェクトは AGPL 版を使用します。商用フォントや実際のユーザー文書は同梱していません。
 

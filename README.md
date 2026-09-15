@@ -87,7 +87,7 @@ Build on each target OS; PyInstaller is not a cross-compiler. GitHub Actions bui
 
 ## License
 
-Copyright (c) 2026 editPDFbyAI contributors. Licensed under **GNU AGPL version 3**, see [LICENSE](LICENSE). Corresponding source is available in this repository and in each release source archive. Dependencies retain their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the license files included with each package.
+Copyright (c) 2026 smartgalilei. Licensed under **GNU AGPL version 3**, see [LICENSE](LICENSE). Corresponding source is available in this repository and in each release source archive. Dependencies retain their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the license files included with each package.
 
 PyMuPDF/MuPDF uses AGPL or a separate commercial license. This project uses the AGPL distribution. No commercial font files or real user PDFs are bundled.
 
